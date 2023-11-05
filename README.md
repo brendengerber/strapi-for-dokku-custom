@@ -1,57 +1,28 @@
-# 🚀 Getting started with Strapi
+# Website for blgerber.com
+## **Desctiption**
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+The backend for this website is built using a self hosted Headless CMS (Strapi) for blgerber.com. It allows content management for the photos in the galleries and the text in the about section. The frontend was built using React and Tailwind by my awesome wife [Thu Smiley](https://github.com/thusmiley).
 
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
-
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
+## **Technologies**
+1. Strapi (Headless CMS)
+2. Digital Ocean Droplet (VPS)
+3. Dokku (self hosted paas built on Docker and Nginx)
+4. Let's Encrypt (SSL)
+5. Node.js (for backup script)
+6. Amazon S3 (for backup storrage)
+7. Cron jobs (for scheduling backups)
+8. Git and Github (for seamless pushes from local to testing and production)
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## **Setup**
+Link to medium articles here. One on setting up DO. One on setting up Strapi on DO.
+
+## **Features**
+1. Zero downtime deoploys (Dokku builds a new container of the updated build before destroying the previous).
+2. Seemless integration with git builds the production or testing site when changes are pushed to the remote Github repo.
+3. Strapi headless CMS for content management.
+4. Custom script run with a cron job to automatically save backups for 30 days in an Amazon s3 bucket.
+
+
+## **Acknowledgement**
+Thank you to my wife [Thu Smiley](https://github.com/thusmiley) for creating the awesome React Frontend to display my photographs so beautifuly.
