@@ -1,20 +1,23 @@
-    name: Deployment
-    on:
-      push:
-        branches: [main]
-    jobs:
-      build:
-        name: Deploy to Dokku
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
-            with:
-              fetch-depth: 0
-          - name: Dokku Deployment
-            uses: dokku/github-action@master
-            with:
-              git_remote_url: "ssh://dokku@${{ secrets.HOST }}:22/strapi-blgerber-app"
-              ssh_private_key: ${{ secrets.SECRET }}
-              git_push_flags: "--force"
-            env:
-              BUILDER_ENV: production
+---
+name: 'deploy'
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          git_remote_url: "ssh://dokku@${{ secrets.HOST }}:22/strapi-blgerber-app"
+          ssh_private_key: ${{ secrets.SECRET }}
