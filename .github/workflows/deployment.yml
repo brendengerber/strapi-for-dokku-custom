@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Push to dokku
-        uses: dokku/github-action@main
+        uses: dokku/github-action@master
         with:
           git_remote_url: 'ssh://dokku@${{ secrets.HOST }}:22/strapi-blgerber-app'
           ssh_private_key: ${{ secrets.SECRET }}
