@@ -5,15 +5,15 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start-strapi": "strapi start",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
     "@strapi/plugin-i18n": "4.15.0",
+    "@strapi/plugin-users-permissions": "4.15.0",
+    "@strapi/strapi": "4.15.0",
     "better-sqlite3": "8.6.0"
   },
   "author": {
