@@ -1,7 +1,7 @@
-# Website for blgerber.com
+# Strapi Configured for Dokku
 ## **Desctiption**
 
-The backend for this website is built using a self hosted Headless CMS (Strapi) for blgerber.com. It allows content management for the photos in the galleries and the text in the about section. The frontend was built using React and Tailwind by my awesome wife [Thu Smiley](https://github.com/thusmiley).
+See www.blgerber.com for an example in action. The server for this website is built using a self hosted Headless CMS (Strapi) deployed on Digital Ocean using Dokku. It allows content management for the photos in the galleries and the text in the about section. The frontend was built using React and Tailwind by my awesome wife [Thu Smiley](https://github.com/thusmiley).
 
 ## **Technologies**
 1. Strapi (Headless CMS)
@@ -23,6 +23,3 @@ Link to medium articles here. One on setting up DO. One on setting up Strapi on 
 3. Strapi headless CMS for content management.
 4. Custom script run with a cron job to automatically save backups for 30 days in an Amazon s3 bucket.
 
-
-## **Acknowledgement**
-Thank you to my wife [Thu Smiley](https://github.com/thusmiley) for creating the awesome React Frontend to display my photographs so beautifuly.
