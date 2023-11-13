@@ -12,7 +12,6 @@ const path = require('path');
         ssl: env.bool('DATABASE_SSL', false),
       },
     },
-    debug: true,
   });
 
   
