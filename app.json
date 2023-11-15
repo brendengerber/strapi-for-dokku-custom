@@ -3,7 +3,7 @@
     "cron": [
       {
         "command": "node /app/backup-to-s3.js",
-        "schedule": "43 14 * * *"
+        "schedule": "00 15 * * *"
       }
     ]
   }
