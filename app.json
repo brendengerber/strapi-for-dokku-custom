@@ -1,0 +1,9 @@
+
+{
+    "cron": [
+      {
+        "command": "node app/backup-to-s3.js",
+        "schedule": "15 14 * * *"
+      }
+    ]
+  }
