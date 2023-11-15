@@ -2,8 +2,17 @@
 {
     "cron": [
       {
-        "command": "cd app && node backup-to-s3.js",
+        "command": "node /app/backup-to-s3.js",
+        "schedule": "16 17 * * *"
+      },
+      {
+        "command": "node backup-to-s3.js",
+        "schedule": "16 17 * * *"
+      },
+      {
+        "command": "/app/.heroku/node/bin/node /app/backup-to-s3.js",
         "schedule": "16 17 * * *"
       }
+
     ]
   }
