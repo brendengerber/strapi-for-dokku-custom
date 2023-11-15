@@ -44,22 +44,27 @@
 const nodemailer = require('nodemailer');
 
 
-let transporter = nodemailer.createTransport({
-    sendmail: true,
-    newline: 'unix',
-    path: '/usr/sbin/sendmail'
-  });
-  transporter.sendMail({
-    from: 'sender@example.com',
-    to: 'brendengerber@gmail.com',
-    subject: 'Test',
-    text: 'I hope this message gets delivered!'
-  }, (err, info) => {
-    console.log(err)
-    console.log(info)
-  });
+// let transporter = nodemailer.createTransport({
+//     sendmail: true,
+//     newline: 'unix',
+//     path: '/usr/sbin/sendmail'
+//   });
+//   transporter.sendMail({
+//     from: 'sender@example.com',
+//     to: 'brendengerber@gmail.com',
+//     subject: 'Test',
+//     text: 'I hope this message gets delivered!'
+//   }, (err, info) => {
+//     console.log(err)
+//     console.log(info)
+//   });
 
+var mail = require("nodemailer").mail;
 
-
-
-   
+mail({
+    from: "Fred Foo ✔ <foo@blurdybloop.com>", // sender address
+    to: "brendengerber@gmail.com", // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world ✔", // plaintext body
+    html: "<b>Hello world ✔</b>" // html body
+});
