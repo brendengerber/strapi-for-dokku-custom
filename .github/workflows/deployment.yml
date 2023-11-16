@@ -1,4 +1,7 @@
 ---
+#Configures github actions to deploy on push to origin's main branch
+#See README.md for details on configuring your github secrets 
+
 name: 'deploy'
 
 # yamllint disable-line rule:truthy
@@ -19,5 +22,5 @@ jobs:
       - name: Push to dokku
         uses: dokku/github-action@master
         with:
-          git_remote_url: "ssh://dokku@${{ secrets.HOST }}:22/strapi-blgerber-app"
+          git_remote_url: "ssh://dokku@${{ secrets.HOST }}:22/${{ secrets.APP_NAME }}"
           ssh_private_key: ${{ secrets.SECRET }}
