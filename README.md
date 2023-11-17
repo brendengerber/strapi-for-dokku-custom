@@ -21,5 +21,5 @@ Link to medium articles here. One on setting up DO. One on setting up Strapi on 
 1. Zero downtime deoploys (Dokku builds a new container of the updated build before destroying the previous).
 2. Seemless integration with git builds the production or testing site when changes are pushed to the remote Github repo.
 3. Strapi headless CMS for content management.
-4. Custom script run with a cron job to automatically save backups for 30 days in an Amazon s3 bucket.
+4. Custom script run with a cron job to automatically save backups for 30 days in an Amazon s3 bucket and send email notification on a failed backup attempt.
 
