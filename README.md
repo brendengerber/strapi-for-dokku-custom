@@ -15,7 +15,7 @@ See www.blgerber.com for an example in action. The server for this website is bu
 ---
 
 ## **Setup**
-Link to medium articles here. One on setting up DO. One on setting up Strapi on DO.
+Link to medium articles here. One on setting up dokku on DO. One on setting up Strapi on DO.
 
 ## **Features**
 1. Zero downtime deoploys (Dokku builds a new container of the updated build before destroying the previous).
