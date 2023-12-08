@@ -50,7 +50,7 @@ try{
             service: 'gmail',
             auth: {
                 user: process.env.BACKUP_NOTIFICATION_SENDER_EMAIL,
-                pass: process.env.BACKUP_NOTIFICATION_EMAIL_SENDER_PASSWORD
+                pass: process.env.BACKUP_NOTIFICATION_SENDER_PASSWORD
             }
         });
 
