@@ -32,8 +32,10 @@ For information on setting up this strapi project on Dokku, see [this](https://m
 ## **Features of this Strapi Configuration**
 1. Integrates with Github using Github actions builds the site whenever changes are pushed to the remote Github repo.
 2. Takes advantage of pm2 to ensure crashed processes are restarted.
-3. Uses a custom script run with a pre configured cron job to automatically save backups for 30 days in an AWS S3 bucket with support for email notifications in the event of any errors/failures.
-4. Connects to a postgres database to store your content types etc.
+3. Connects to a postgres database to store your content types etc.
+4. Saves media uploads to an S3 bucket to prevent data loss and decrease backup file sizes.
+5. Uses a custom script run with a pre configured cron job to automatically save backups for 30 days in an AWS S3 bucket with support for email notifications in the event of any errors/failures.
+
 
 
 

@@ -11,7 +11,7 @@ require('dotenv').config();
 
 
 //Creates the s3Client to upload files
-const s3Client = new S3Client({region: "us-east-2", credentials: {accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY}});
+const s3Client = new S3Client({region: process.env.AWS_BUCKET_REGION, credentials: {accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY}});
 
 try{
     //Creates a child process to run the export command to make a back up of Strapi
@@ -36,7 +36,7 @@ try{
         const file = fs.readFileSync(path.join(__dirname, `/${fileName}`));
         
         //Uploads the file to s3
-        const command = new PutObjectCommand({Bucket: process.env.AWS_BUCKET_NAME, Key: fileName, Body: file});
+        const command = new PutObjectCommand({Bucket: process.env.AWS_BACKUP_BUCKET_NAME, Key: fileName, Body: file});
         s3Client.send(command);
 
         //Deletes the file from local after successful upload to the S3 bucket
@@ -60,7 +60,7 @@ try{
                 address: process.env.BACKUP_NOTIFICATION_ALTERNATE_SENDER_EMAIL || process.env.BACKUP_NOTIFICATION_SENDER_EMAIL
             },
             to: process.env.BACKUP_NOTIFICATION_DESTINATION_EMAIL,
-            subject: `Error backing up to ${process.env.AWS_BUCKET_NAME} S3 bucket`,
+            subject: `Error backing up to ${process.env.AWS_BACKUP_BUCKET_NAME} S3 bucket`,
             text: err.message
         };
 
